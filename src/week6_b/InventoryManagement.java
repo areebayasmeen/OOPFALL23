@@ -18,18 +18,15 @@ public class InventoryManagement extends Requirements{
     }
 
     @Override
-    public void remove(Object o) {
-
-        Product p=(Product) o;
-        for(int i=0;i< list.length;i++)
-        {
-            if(p.equals(this)) {
-                list[i] = null;
-                break;
+   public void remove(Object o) {
+            Product p = (Product) o;
+            for (int i = 0; i < list.length; i++) {
+                if (list[i] != null && list[i].equals(p)) {
+                    list[i] = null;
+                    break;
+                }
             }
         }
-
-    }
     public void displayList(){
         for(Product p:list)
             if(p!=null)
